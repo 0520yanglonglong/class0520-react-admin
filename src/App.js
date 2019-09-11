@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import routes from  './config/routes';
-
-
+// import login  from './components/login/index';
+import './assets/less/index.less'
 class App extends Component {
     render() {
         return <Router>{
