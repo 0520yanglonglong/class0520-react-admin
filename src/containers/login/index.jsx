@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import {Form, Icon, Input, Button, message} from 'antd';
-import { saveUser } from '@redux/action-creators';
+
+import  { reqLogin } from '../../api';
+import withCheckLogin from '../with-check-login';
+
 import {connect} from 'react-redux';
-import  {reqLogin} from  '../../api';
+import { saveUser } from '@redux/action-creators';
+
 import bg from './bg.jpg';
 import logo from './logo.png';
 import './index.less';
 
+
+@withCheckLogin
 @connect(
     null,
     { saveUser }
