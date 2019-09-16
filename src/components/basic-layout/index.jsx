@@ -1,16 +1,18 @@
 import { Layout, Breadcrumb } from 'antd';
 import React, { Component } from 'react';
+
 import withCheckLogin from '@conts/with-check-login';
 import HeaderMain from './header-main';
+import { withTranslation } from 'react-i18next';
 
 
 
-import LeftNav from './left-nav';
+import LeftNav from  './left-nav';
 import logo from '@assets/images/logo.png';
 import './index.less';
 
 const { Header, Content, Footer, Sider } = Layout;
-
+@withTranslation()
 @withCheckLogin
 class BasicLayout extends Component {
     state = {
@@ -28,16 +30,17 @@ class BasicLayout extends Component {
 
     render() {
         const { collapsed, isDisplay } = this.state;
+        const  { t } =this.props;
         return (
             <Layout style={{ minHeight: '100vh' }}>
                 <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
                     <div className="basic-layout-logo" >
                     <img src={logo} alt="logo"/>
-                    <h1 style={{display: isDisplay ? 'block' : 'none'}}>硅谷后台</h1>
+                    <h1 style={{display: isDisplay ? 'block' : 'none'}}>{t('title')}</h1>
                     </div>
 
 
-                    <LeftNav>      </LeftNav>
+                      <LeftNav />
                     {/*<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">*/}
                         {/*<Menu.Item key="1">*/}
                             {/*<Icon type="pie-chart" />*/}
@@ -78,9 +81,6 @@ class BasicLayout extends Component {
                         {/*</Menu.Item>*/}
                     {/*</Menu>*/}
                 </Sider>
-
-
-
                 <Layout>
                     <Header style={{ background: '#fff', padding: 0 ,height:80}} >
                        <HeaderMain/>

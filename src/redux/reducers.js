@@ -2,8 +2,8 @@
 * 根据prevState和action来生成newstate
 * */
 import { combineReducers } from 'redux';
-import  {SAVE_USER}  from './action-types';
-import {setItem,getItem} from "../utils/storage";
+import  {SAVE_USER, REMOVE_USER, SET_TITLE}  from './action-types';
+import {setItem,getItem, removeItem } from "../utils/storage";
 //初始化数据
 const initUser = {
     user: getItem('user')  || {},
@@ -16,10 +16,28 @@ function user(prevstate = initUser,action) {
             setItem('user',action.data.user);
             setItem('token',action.data.token);
             return action.data;
+        case REMOVE_USER :
+            removeItem('user');
+            removeItem('token');
+            return {
+                user: {},
+                token: ''
+            };
         default:
             return prevstate
     }
 }
+function title(prevState = '', action) {
+    switch (action.type) {
+        case SET_TITLE :
+            return action.data;
+        default :
+            return prevState;
+    }
+}
+
+
 export  default  combineReducers({
-    user
+    user,
+    title
 })

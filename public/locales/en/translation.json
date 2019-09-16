@@ -1,0 +1,16 @@
+{
+  "title": "Gui gu",
+  "menus":  {
+    "home": "Home",
+    "products": "Products",
+    "category": "Category",
+    "product": "Product",
+    "user": "User",
+    "role": "Role",
+    "charts":"Charts",
+    "line": "Line",
+    "bar": "Bar",
+    "pie": "Pie"
+
+  }
+}
