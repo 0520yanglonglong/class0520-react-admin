@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 
 import { removeUser } from '@redux/action-creators';
-import { formatDate } from '@utils/tools';
+// import { formatDate } from '@utils/tools';
 import './index.less';
 
 @connect(
@@ -49,9 +49,9 @@ class HeaderMain extends Component {
     };
 
     componentDidMount() {
-        // 绑定事件
+
         screenfull.on('change', this.change);
-        // 设置定时器
+
         setInterval(() => {
             this.setState({
                 // time: formatDate()
@@ -61,12 +61,12 @@ class HeaderMain extends Component {
     }
 
     componentWillUnmount() {
-        // 解绑事件
+
         screenfull.off('change', this.change);
     }
 
     logout = () => {
-        // 显示对话框
+
         Modal.confirm({
             title: '您确认要退出登录吗？',
             onOk: () => {

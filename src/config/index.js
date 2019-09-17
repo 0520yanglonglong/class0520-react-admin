@@ -1,7 +1,7 @@
 
 
+const isEnv = process.env.NODE_ENV === 'development';
 
-const  isEnv = process.env.NODE_ENV === 'devplopment';
 export {
     isEnv
 }

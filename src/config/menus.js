@@ -1,3 +1,4 @@
+
 const menus = [
     {
         icon: 'home',
@@ -10,14 +11,14 @@ const menus = [
         key: '/products',
         children: [
             {
-                icon: 'home',
+                icon: 'bars',
                 title: 'menus.category',
-                key: '/product'
+                key: '/category'
             },
             {
-                icon: 'home',
+                icon: 'tool',
                 title: 'menus.product',
-                key: '/category'
+                key: '/product'
             }
         ]
     },
@@ -27,27 +28,27 @@ const menus = [
         key: '/user'
     },
     {
-        icon: 'user',
+        icon: 'safety',
         title: 'menus.role',
         key: '/role'
     },
     {
-        icon: 'appstore',
+        icon: 'area-chart',
         title: 'menus.charts',
         key: '/charts',
         children: [
             {
-                icon: 'home',
-                title: 'menus.chart',
+                icon: 'bar-chart',
+                title: 'menus.bar',
                 key: '/charts/bar'
             },
             {
-                icon: 'home',
+                icon: 'line-chart',
                 title: 'menus.line',
                 key: '/charts/line'
             },
             {
-                icon: 'home',
+                icon: 'pie-chart',
                 title: 'menus.pie',
                 key: '/charts/pie'
             }
@@ -55,4 +56,4 @@ const menus = [
     },
 ];
 
-export default  menus;
+export default menus;
